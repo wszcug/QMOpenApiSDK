@@ -140,54 +140,41 @@ demo中的例子：
 
 
 
-### 2.3 QQ授权配置
+### 2.3 发起认证
 
-```objective-c
-- (BOOL)configureWithQQAppID:(NSString *)qqAppID universalLink:(NSString *)universalLink;
-```
-
-| 参数          | 类型     | 说明                  |
-| ------------- | -------- | --------------------- |
-| qqAppID       | NSString | QQ分配的AppID         |
-| universalLink | NSString | QQ分配的universalLink |
-
-
-
-### 2.4 发起认证
-
-#### 2.4.1 QQ音乐认证
+#### 2.3.1 QQ音乐认证
 
 ```
 - (void)startQQMusicAuthenticationWithCompletion:(void(^)(BOOL success, NSString *msg))completion;
 ```
 
-#### 2.4.2 微信小程序认证
+#### 2.3.2 微信小程序认证
 
 ```
 - (void)startWXMiniAppAuthenticationWithCompletion:(void(^)(BOOL success, NSString *msg))completion;
 ```
 
-#### 2.2.3QQH5认证
+#### 2.3.3QQH5认证
 
 ```
 - (void)startQQH5AuthenticationWithWebUrl:(void(^)(NSString *webUrl))webUrl Completion:(void(^)(BOOL success, NSString *msg))completion;
 ```
 
-#### 2.2.4 二维码认证（包括QQ、微信、Q音）
+#### 2.3.4 二维码认证（包括QQ、微信、Q音）
 
 ```
 - (void)startQQH5AuthenticationWithWebUrl:(void(^)(NSString *webUrl))webUrl Completion:(void(^)(BOOL success, NSString *msg))completion;
 ```
 
-### 2.5 登录状态
+### 2.4 登录状态
 
-#### 2.5.1 获取当前登录状态
+#### 2.4.1 获取当前登录状态
 
 ```
 - (BOOL)isLogin;
 ```
 
-#### 2.3.2 登出
+#### 2.4.2 登出
 
 ```
 - (void)logout;
