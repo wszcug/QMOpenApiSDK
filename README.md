@@ -163,7 +163,7 @@ demo中的例子：
 #### 2.3.4 二维码认证（包括QQ、微信、Q音）
 
 ```
-- (void)startQQH5AuthenticationWithWebUrl:(void(^)(NSString *webUrl))webUrl Completion:(void(^)(BOOL success, NSString *msg))completion;
+- (void)startQRCodeAuthenticationWithImage:(void(^)(UIImage *qrimage))qrimage Completion:(void(^)(BOOL success, NSString *msg))completion;
 ```
 
 ### 2.4 登录状态
