@@ -1,0 +1,6 @@
+framework module QMOpenApiSDK {
+  umbrella header "QMOpenApiSDK.h"
+
+  export *
+  module * { export * }
+}
