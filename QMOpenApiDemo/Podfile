@@ -6,5 +6,5 @@ target 'QMOpenApiDemo' do
   use_frameworks!
 
   # Pods for QMOpenApiDemo
-pod 'WSZSDKTest'
+pod 'QMOpenApiSDK'
 end
