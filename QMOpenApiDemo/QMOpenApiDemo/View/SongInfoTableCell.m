@@ -16,6 +16,8 @@
 @property (strong, nonatomic) UIImageView   *albumCoverImageView;
 @property (strong, nonatomic) UILabel       *songLabel;
 @property (strong, nonatomic) UILabel       *singerLabel;
+@property (strong, nonatomic) UIButton      *downloadBtn;
+@property (strong, nonatomic) UILabel       *progress;
 @end
 
 @implementation SongInfoTableCell
@@ -56,6 +58,32 @@
     return _singerLabel;
 }
 
+- (UIButton *) downloadBtn {
+    if (!_downloadBtn) {
+        _downloadBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+
+        [_downloadBtn setTitle:@"下载" forState:UIControlStateNormal];
+        _downloadBtn.titleLabel.font = [UIFont systemFontOfSize:12 weight:UIFontWeightRegular];
+        _downloadBtn.backgroundColor = UIColor.lightGrayColor;
+        [_downloadBtn setTitleColor:UIColor.blueColor forState:UIControlStateNormal];
+        _downloadBtn.layer.cornerRadius = 3;
+        [_downloadBtn addTarget:self action:@selector(btnClicked) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _downloadBtn;
+}
+
+- (UILabel *) progress {
+    
+    if (!_progress) {
+        _progress = [[UILabel alloc] init];
+        _progress.text = @"";
+        _progress.textAlignment = NSTextAlignmentLeft;
+        _progress.textColor     = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.9];
+        _progress.font          = [UIFont systemFontOfSize:16 weight:UIFontWeightRegular];
+    }
+    return _progress;
+}
+
 - (id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self)
@@ -79,7 +107,8 @@
     [self.contentView addSubview:self.albumCoverImageView];
     [self.contentView addSubview:self.songLabel];
     [self.contentView addSubview:self.singerLabel];
-  
+    [self.contentView addSubview:self.downloadBtn];
+    [self.contentView addSubview:self.progress];
 }
 
 - (void)setupConstraints {
@@ -100,6 +129,16 @@
         make.top.mas_equalTo(self.songLabel.mas_bottom).with.offset(4);
         make.left.right.equalTo(self.songLabel);
     }];
+    [self.downloadBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(50, 25));
+        make.centerY.mas_equalTo(self.contentView);
+        make.right.mas_equalTo(self.contentView).offset(-20);
+    }];
+    [self.progress mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.mas_equalTo(self.contentView);
+        make.right.mas_equalTo(self.downloadBtn.mas_left).offset(-20);
+        make.height.mas_equalTo(@16);
+    }];
 }
 
 - (void) updateCellWithSongInfo:(QPSongInfo *)songInfo {
@@ -118,6 +157,23 @@
             self.songLabel.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
             self.singerLabel.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.3];
         }
+    }
+}
+
+- (void) updateProgress:(float)progress {
+    if (progress > 1) {
+        progress = 1;
+    }
+    if (progress < 0) {
+        progress = 0;
+    }
+    progress = progress * 100.f;
+    self.progress.text = [NSString stringWithFormat:@"%0.f%%",progress];
+}
+
+- (void)btnClicked {
+    if (self.downloadBtnClicked) {
+        self.downloadBtnClicked();
     }
 }
 

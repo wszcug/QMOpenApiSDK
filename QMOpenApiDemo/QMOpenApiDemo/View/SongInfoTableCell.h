@@ -12,7 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface SongInfoTableCell : UITableViewCell
+@property (nonatomic, copy) void(^downloadBtnClicked)(void);
 - (void) updateCellWithSongInfo:(QPSongInfo *)songInfo;
+- (void) updateProgress:(float)progress;
 @end
 
 NS_ASSUME_NONNULL_END

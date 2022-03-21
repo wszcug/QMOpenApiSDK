@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
 
 
 spec.name         	= "QMOpenApiSDK"
-spec.version      	= "1.1.3"
+spec.version      	= "1.1.4"
 spec.summary      	= "The Official iOS SDK of QQMusic Open API."
 spec.license      	= "MIT"
 spec.author       	= { "wszcug" => "272327827@qq.com" }

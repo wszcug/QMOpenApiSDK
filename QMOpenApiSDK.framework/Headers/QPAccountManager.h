@@ -71,7 +71,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param universalLink QQ分配的universalLink
  *  @return 返回配置结果
  */
-- (BOOL)configureWithQQAppID:(NSString *)qqAppID universalLink:(NSString *)universalLink;
+//- (BOOL)configureWithQQAppID:(NSString *)qqAppID universalLink:(NSString *)universalLink;
 
 /**
  *  QQ音乐认证
