@@ -21,7 +21,7 @@
     
     [[QPAccountManager sharedInstance] configureWithQMAppID:@"12345668" appKey:@"qoJvLUGMKmSExFJdXD" callBackUrl:@"qmopenapidemo://auth"];
     [[QPAccountManager sharedInstance] configureWithWXAppID:@"wx85d9b008252f26b5" universalLink:@"https://music.qq.com/tango/"];
-    [[QPAccountManager sharedInstance] configureWithQQAppID:@"100446242" universalLink:@"www.qq.com"];
+    //[[QPAccountManager sharedInstance] configureWithQQAppID:@"100446242" universalLink:@"www.qq.com"];
 
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
     [SVProgressHUD setBackgroundColor:UIColor.lightGrayColor];
