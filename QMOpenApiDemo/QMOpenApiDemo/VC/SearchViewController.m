@@ -17,6 +17,7 @@
 #import "SongListViewController.h"
 #import "AlbumListViewController.h"
 #import "SVProgressHUD.h"
+#import "PlayerCacheVC.h"
 
 @interface SearchViewController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic) UISearchController *searchController;
@@ -28,7 +29,7 @@
 @property (nonatomic) NSArray<QPLyricInfo *>  *lyrics;
 @property (nonatomic) NSArray<QPFolder *>  *folders;
 @property (nonatomic) NSInteger searchType; // 0：单曲搜索 3:歌单搜索 8：专辑搜索 15：电台 歌词：100//(默认为0)
-@property (nonatomic) NSMutableDictionary *progressInfo;
+
 @end
 
 @implementation SearchViewController
@@ -54,7 +55,6 @@
     self.albums = [NSArray array];
     self.lyrics = [NSArray array];
     self.singers = [NSArray array];
-    self.progressInfo= [NSMutableDictionary dictionary];
     
     self.tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapped)];
     self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
@@ -240,16 +240,12 @@
     if (self.searchType == 0) {
         SongInfoTableCell *cell = (SongInfoTableCell *)[tableView dequeueReusableCellWithIdentifier:@"SongInfoTableCell" forIndexPath:indexPath];
         [cell updateCellWithSongInfo:self.songs[indexPath.row]];
-        __weak typeof(cell) weakCell = cell;
         __weak typeof(self) weakSelf = self;
         cell.downloadBtnClicked = ^{
-            [[QPlayerManager sharedInstance] preDownloadSong:self.songs[indexPath.row] handler:^(int status,float progress, NSString * _Nonnull errMsg) {
-                [weakSelf.progressInfo setObject:[NSNumber numberWithFloat:progress] forKey:[NSString stringWithFormat:@"%ld",indexPath.row]];
-                [weakCell updateProgress:progress];
-            }];
+            PlayerCacheVC *vc = [[PlayerCacheVC alloc] initWithSong:self.songs[indexPath.row]];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+            weakSelf.navigationController.hidesBottomBarWhenPushed = YES;
         };
-        NSNumber *number = [weakSelf.progressInfo objectForKey:[NSString stringWithFormat:@"%ld",indexPath.row]];
-        [cell updateProgress:number.floatValue];
         return cell;
     }
     else if (self.searchType == 3){
