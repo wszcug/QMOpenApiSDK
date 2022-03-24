@@ -91,8 +91,16 @@ typedef NS_ENUM(NSInteger, QPlaybackCache) {
 - (void)playAtIndex:(NSInteger)index;
 - (void)playSongs:(NSArray<QPSongInfo *> *)songs index:(NSInteger)index;
 
+/// 歌曲是否缓存
+/// 注意：耗时操作请勿批量或频繁调用
+/// @param status 0：查询成功 1:查询失败
+/// @param cached YES：已缓存 NO:未缓存
+/// @param errMsg 错误信息
+- (void)isSongCached:(QPSongInfo *)song handler:(void(^)(int status, BOOL cached, NSString *errMsg))handler;
+
 /// 歌曲预下载
-/// @param status 下载状态 0：下载中 1:下载完成 2:下载出错
+/// 注意：耗时操作请勿批量或频繁调用
+/// @param status 0：下载中 1:下载完成 2:下载出错
 /// @param progress 进度（0～1）
 /// @param errMsg 错误信息
 - (void)preDownloadSong:(QPSongInfo *)song handler:(void(^)(int status, float progress,NSString *errMsg))handler;
