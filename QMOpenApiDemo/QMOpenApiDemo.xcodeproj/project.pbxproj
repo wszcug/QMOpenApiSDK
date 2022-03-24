@@ -165,6 +165,7 @@
 		3073CEF327BF8352009C8DB2 /* xmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3073CEE227BF8352009C8DB2 /* xmark.png */; };
 		3073CEF427BF8352009C8DB2 /* previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 3073CEE327BF8352009C8DB2 /* previous.png */; };
 		3073CEF527BF8352009C8DB2 /* personal.png in Resources */ = {isa = PBXBuildFile; fileRef = 3073CEE427BF8352009C8DB2 /* personal.png */; };
+		30E3AA8927EC5D4A00A37D60 /* PlayerCacheVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E3AA8727EC5D4A00A37D60 /* PlayerCacheVC.m */; };
 		B3A2C4FFD7DF317B807EB1DE /* Pods_QMOpenApiDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB0F05B94BC775F904E65453 /* Pods_QMOpenApiDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -504,6 +505,8 @@
 		3073CEE427BF8352009C8DB2 /* personal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = personal.png; sourceTree = "<group>"; };
 		3073CEF627BF8356009C8DB2 /* QMOpenApiDemoDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = QMOpenApiDemoDebug.entitlements; sourceTree = "<group>"; };
 		3073CEF727BF8356009C8DB2 /* QMOpenApiDemo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = QMOpenApiDemo.entitlements; sourceTree = "<group>"; };
+		30E3AA8727EC5D4A00A37D60 /* PlayerCacheVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCacheVC.m; sourceTree = "<group>"; };
+		30E3AA8827EC5D4A00A37D60 /* PlayerCacheVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCacheVC.h; sourceTree = "<group>"; };
 		BB0F05B94BC775F904E65453 /* Pods_QMOpenApiDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QMOpenApiDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7558A954A7802BF8253E5D2 /* Pods-QMOpenApiDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QMOpenApiDemo.debug.xcconfig"; path = "Target Support Files/Pods-QMOpenApiDemo/Pods-QMOpenApiDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -595,6 +598,8 @@
 				3073CE2C27BF834C009C8DB2 /* QRCodeLoginVC.h */,
 				3073CD1027BF834C009C8DB2 /* SearchViewController.m */,
 				3073CE2B27BF834C009C8DB2 /* SearchViewController.h */,
+				30E3AA8827EC5D4A00A37D60 /* PlayerCacheVC.h */,
+				30E3AA8727EC5D4A00A37D60 /* PlayerCacheVC.m */,
 				3073CD1127BF834C009C8DB2 /* Others */,
 			);
 			path = VC;
@@ -1225,6 +1230,7 @@
 				3073CE6027BF834C009C8DB2 /* SDImageHEICCoder.m in Sources */,
 				3073CE5727BF834C009C8DB2 /* MASViewConstraint.m in Sources */,
 				3073CE7C27BF834C009C8DB2 /* SDWebImagePrefetcher.m in Sources */,
+				30E3AA8927EC5D4A00A37D60 /* PlayerCacheVC.m in Sources */,
 				3073CE3627BF834C009C8DB2 /* UIScrollView+MJRefresh.m in Sources */,
 				3073CE9427BF834D009C8DB2 /* SDWebImageOptionsProcessor.m in Sources */,
 				3073CE5027BF834C009C8DB2 /* ViewController+MASAdditions.m in Sources */,
