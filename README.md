@@ -85,7 +85,7 @@ pod 'QMOpenApiSDK'
   libiconv.tbd
   
 5.增加编译选项
-  build setting -> other link flags -> 增加 -ObjC -all_load -fobjc-arc
+  build setting -> other linker flags -> 增加 -ObjC -all_load -fobjc-arc
 
 #### 1.3.1.3 微信SDK接入
 
