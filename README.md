@@ -64,13 +64,28 @@ pod 'QMOpenApiSDK'
 
 ![avatar](https://y.qq.com/music/common/upload/t_opi_pic_save_location_temp/4211224.png)
 
-2、选中宿主工程文件->TARGETS->Info->URL Types-> 增加Scheme，其中，Identifier和URL Schemes 建议填写宿主工程名字,如图所示
+2.选中宿主工程文件->TARGETS->Info->URL Types-> 增加Scheme，其中，Identifier和URL Schemes 建议填写宿主工程名字,如图所示
 
 ![avatar](https://y.qq.com/music/common/upload/t_opi_pic_save_location_temp/4211197.png)
 
 3.选中宿主工程文件->TARGETS->Info.plist -> 增加LSApplicationQueriesSchemes字段->增加qqmusic
 
 ![avatar](https://y.qq.com/music/common/upload/t_opi_pic_save_location_temp/4211199.png)
+
+4.添加依赖库
+  SystemConfiguration.framework
+  Security.framework
+  CoreGraphics.framework
+  AVFoundation.framework
+  CoreTelephony.framework
+  WebKit.framework
+  libz.tbd
+  libc++.tbd
+  libsqlite3.0.tbd
+  libiconv.tbd
+  
+5.增加编译选项
+  build setting -> other link flags -> 增加 -ObjC -all_load -fobjc-arc
 
 #### 1.3.1.3 微信SDK接入
 
